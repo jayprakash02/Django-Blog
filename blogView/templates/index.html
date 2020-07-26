@@ -189,7 +189,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-6 col-md-6 col-lg-9 order-md-last img py-5"
-			style="background-image: url( {{ video.bg_img.url }} );"></div>
+			style="background-image: url( {{ video.bg_img.url }} );" ></div>
 			<!-- VIDEO-->
 			<div class="col-sm-6 col-md-6 col-lg-3 py-4 text d-flex align-items-center ftco-animate">
 				<div class="text-2 py-5 px-4">
@@ -220,9 +220,10 @@
 							It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
 						<div class="row d-flex justify-content-center mt-4 mb-4">
 							<div class="col-md-8">
-								<form action="#" class="subscribe-form">
+								<form method="POST" class="subscribe-form">
 									<div class="form-group d-flex">
-										<input type="text" class="form-control" placeholder="Enter email address">
+										{{ newsletter_form.as_p }}
+										{% csrf_token %}
 										<input type="submit" value="Subscribe" class="submit px-3">
 									</div>
 								</form>

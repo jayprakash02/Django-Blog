@@ -24,6 +24,9 @@
   <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
   <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5f259023c542ec001259a275&product=sticky-share-buttons" async="async"></script>
+
 </head>
 
 <body>
@@ -74,15 +77,19 @@
           <!--BLOG AREA END-->
           <!--TAG-->
           <div class="tag-widget post-tag-container mb-5 mt-5">
-            <div class="tagcloud">
+            <!--div class="tagcloud">
               <a href="#" class="tag-cloud-link">Life</a>
               <a href="#" class="tag-cloud-link">Sport</a>
               <a href="#" class="tag-cloud-link">Tech</a>
               <a href="#" class="tag-cloud-link">Travel</a>
-            </div>
+            </div-->
+            <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FFADU-BABA-JI-396683424512885%2F&width=450&layout=standard&action=like&size=large&share=true&height=35&appId" width="450" height="35" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>        <br>
           </div>
-        <br>
-          <ul class="comment-list">
+          <!-- ShareThis BEGIN -->
+          <div class="sharethis-inline-reaction-buttons"></div>
+          <!-- ShareThis END --> 
+            <ul class="comment-list">
+
             {% for comment in comment %}
             
             <h3 class="mb-5">Comments</h3>

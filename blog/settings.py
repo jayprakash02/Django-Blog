@@ -20,12 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = '6eli_9(9a4ng$dfm4=r!tohv8j-e!#8=m916@n)&)o^^0(q4vv'
-SECRET_KEY = config('SECRET_KEY')
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+ SECRET_KEY = '6eli_9(9a4ng$dfm4=r!tohv8j-e!#8=m916@n)&)o^^0(q4vv'
 
-ALLOWED_HOSTS = ['https://djblogstories.herokuapp.com/','127.0.0.1']
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = False
+
+ALLOWED_HOSTS = ['*','https://djblogstories.herokuapp.com/','127.0.0.1']
 
 
 # Application definition
@@ -43,6 +43,9 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -50,7 +53,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
 ROOT_URLCONF = 'blog.urls'
 
 TEMPLATES = [
@@ -75,11 +77,13 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+import dj_database_url
 DATABASES = {
     'default':  dj_database_url.config(
         default=config('DATABASE_URL')
     )   
 }
+
 
 
 # Password validation
@@ -118,9 +122,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
+
 STATIC_ROOT= os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS =[
-        os.path.join(BASE_DIR,'static'),
+        os.path.join(BASE_DIR,'main/static'),
 ] 
-STATICFILES_STORAGE = 'whitenoise.django.GzipMainfestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 
 DATABASES = {
     'default':  dj_database_url.config(
-        default=config('DATABASE_URL')
+        default='postgres://dxpiuxjhgqxxgv:cea7a5c826436be313f68c83bbdf4c31e200e39c5c1f45f89be508368068de2e@ec2-50-16-198-4.compute-1.amazonaws.com:5432/d8g295gvdj48fn'
     )   
 }
 

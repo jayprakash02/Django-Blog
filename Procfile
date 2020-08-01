@@ -1,2 +1,2 @@
+release: python manage.py migrate
 web: guicorn CMS.wsgi
-manage.py migrate

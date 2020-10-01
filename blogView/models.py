@@ -54,3 +54,8 @@ class Comment(models.Model):
 
 class NewsLetter(models.Model):
     email = models.EmailField(max_length=200 , primary_key=True)
+
+class Author(models.Model):
+    name = models.CharField(max_length=50,default='Jay Prakash')
+    image = models.ImageField(upload_to='uploads/author', height_field=None, width_field=None, max_length=None)
+    words = models.CharField(max_length=150)

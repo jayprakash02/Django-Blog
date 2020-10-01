@@ -19,10 +19,10 @@ class Blog(models.Model):
     title = models.CharField(max_length=50)
     tag = models.CharField(max_length=20, choices=TAG)
     feature = models.CharField(max_length=20, choices=FEATURE)
-    blog = models.CharField(max_length=5000)
+    blog = models.TextField(max_length=5000)
     desc = models.CharField(max_length=50)
     bg_img = models.ImageField(upload_to='uploads/blog', height_field=None, width_field=None, max_length=None)
-
+    post = models.BooleanField(default=False)
     def __str__(self):
         return self.title
     

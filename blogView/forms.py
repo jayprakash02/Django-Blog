@@ -15,4 +15,4 @@ class NewsLetterForm(forms.ModelForm):
 class BlogForm(forms.ModelForm):
     class Meta:
         model = Blog
-        feilds = '__all__'
+        fields = '__all__'

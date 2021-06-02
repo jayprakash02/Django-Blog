@@ -32,6 +32,6 @@ six==1.15.0
 sqlparse==0.3.1
 test-generator==0.1.1
 tqdm==4.48.2
-urllib3==1.25.10
+urllib3==1.26.5
 whitenoise==5.2.0
 wincertstore==0.2

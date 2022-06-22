@@ -16,7 +16,7 @@ idna==2.10
 joblib==0.16.0
 networkx==2.5
 nltk==3.5
-numpy==1.19.1
+numpy==1.22.0
 oauthlib==3.1.0
 protobuf==3.13.0
 psycopg2==2.8.5
